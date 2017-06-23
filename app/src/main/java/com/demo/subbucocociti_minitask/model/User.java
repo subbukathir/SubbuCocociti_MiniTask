@@ -1,11 +1,15 @@
 package com.demo.subbucocociti_minitask.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by subbu on 23/6/17.
  */
 
 public class User {
+    @SerializedName("email")
     private String email;
+    @SerializedName("password")
     private String password;
 
     public User(String email, String password) {

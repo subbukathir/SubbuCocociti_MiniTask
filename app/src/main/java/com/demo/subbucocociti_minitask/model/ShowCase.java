@@ -1,20 +1,29 @@
 package com.demo.subbucocociti_minitask.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by subbu on 23/6/17.
  */
 
 public class ShowCase {
-    private String id;
-    private String title;
-    private String description;
-    private String year;
 
-    public String getId() {
+    @SerializedName("id")
+    private Integer id;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("description")
+    private String description;
+    @SerializedName("year")
+    private String year;
+    @SerializedName("user_id")
+    private Double userId;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,4 +50,13 @@ public class ShowCase {
     public void setYear(String year) {
         this.year = year;
     }
+
+    public Double getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Double userId) {
+        this.userId = userId;
+    }
+
 }

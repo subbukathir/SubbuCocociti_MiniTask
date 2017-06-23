@@ -1,7 +1,5 @@
 package com.demo.subbucocociti_minitask.rest_api;
 
-import com.demo.subbucocociti_minitask.rest_api.ApiConstant;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;

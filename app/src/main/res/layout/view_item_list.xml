@@ -17,6 +17,19 @@
             style="@style/txtview_list_item"
             android:text="@string/lbl_id" />
     </LinearLayout>
+    <LinearLayout
+        style="@style/match_wrap_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/txtview_lbl_list_item"
+            android:text="@string/lbl_user_id" />
+
+        <TextView
+            android:id="@+id/tv_item_user_id"
+            style="@style/txtview_list_item"
+            android:text="@string/lbl_id" />
+    </LinearLayout>
 
     <LinearLayout
         style="@style/match_wrap_style"

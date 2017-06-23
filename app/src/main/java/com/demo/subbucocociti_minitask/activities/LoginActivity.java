@@ -1,5 +1,6 @@
 package com.demo.subbucocociti_minitask.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -35,19 +36,15 @@ public class LoginActivity extends AppCompatActivity implements Login_Listener,V
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        mActivity = (AppCompatActivity) getApplicationContext();
+        mActivity = this;
 
         ape_email = (AppCompatEditText) findViewById(R.id.et_email);
         ape_password = (AppCompatEditText) findViewById(R.id.et_password);
         ape_btn_login = (AppCompatButton) findViewById(R.id.btn_login);
 
-        ape_btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        ape_btn_login.setOnClickListener(this);
 
     }
 
@@ -59,8 +56,8 @@ public class LoginActivity extends AppCompatActivity implements Login_Listener,V
 
     private void setUpActionBar(){
         mToolbar =(Toolbar) findViewById(R.id.toolbar);
-        getSupportActionBar().setTitle(R.string.lbl_login);
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle(R.string.lbl_login);
     }
 
     @Override
@@ -91,7 +88,14 @@ public class LoginActivity extends AppCompatActivity implements Login_Listener,V
         Log.e(TAG,"onLoginDataReceivedSuccess");
         Apputils.hideProgressDialog();
 
+        Bundle bundle = new Bundle();
+        bundle.putString(Apputils.ARG_TOKEN,responseLogin.getData().getUser().getAccessToken());
+        bundle.putString(Apputils.ARG_EMAIL,responseLogin.getData().getUser().getEmail());
         Log.e(TAG,"result " + responseLogin.getStatus());
+
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        intent.putExtra(Apputils.ARG_BUNDLE,bundle);
+        startActivity(intent);
 
     }
 
@@ -100,6 +104,7 @@ public class LoginActivity extends AppCompatActivity implements Login_Listener,V
         Log.e(TAG,"onLoginDataReceivedError");
         Apputils.hideProgressDialog();
 
+        Toast.makeText(mActivity,strErr,Toast.LENGTH_SHORT).show();
         Log.e(TAG," result error " + strErr);
     }
 }

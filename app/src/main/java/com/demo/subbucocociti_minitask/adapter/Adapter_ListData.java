@@ -2,6 +2,7 @@ package com.demo.subbucocociti_minitask.adapter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by vikram on 22/6/17.
+ * Created by subbu on 23/6/17.
  */
 
 public class Adapter_ListData extends RecyclerView.Adapter<Adapter_ListData.Viewholder> {
@@ -30,11 +31,12 @@ public class Adapter_ListData extends RecyclerView.Adapter<Adapter_ListData.View
     }
 
     public class Viewholder extends RecyclerView.ViewHolder{
-        private TextView tv_id,tv_title,tv_description,tv_year;
+        private TextView tv_id,tv_title,tv_description,tv_year,tv_user_id;
         public Viewholder(View itemView) {
             super(itemView);
 
             tv_id = (TextView) itemView.findViewById(R.id.tv_item_id);
+            tv_user_id = (TextView) itemView.findViewById(R.id.tv_item_user_id);
             tv_title = (TextView) itemView.findViewById(R.id.tv_item_title);
             tv_description = (TextView) itemView.findViewById(R.id.tv_item_description);
             tv_year = (TextView) itemView.findViewById(R.id.tv_item_year);
@@ -51,7 +53,8 @@ public class Adapter_ListData extends RecyclerView.Adapter<Adapter_ListData.View
 
         ShowCase showCase  = listShowCase.get(position);
 
-        holder.tv_id.setText(showCase.getId());
+        holder.tv_id.setText(showCase.getId().toString());
+        holder.tv_user_id.setText(showCase.getUserId().toString());
         holder.tv_title.setText(showCase.getTitle());
         holder.tv_description.setText(showCase.getDescription());
         holder.tv_year.setText(showCase.getYear());

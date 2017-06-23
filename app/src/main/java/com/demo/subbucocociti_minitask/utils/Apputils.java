@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 public class Apputils {
 
 
+    public static final String ARG_BUNDLE = "bundle_login_data";
     public static final String ARG_TOKEN = "token";
     public static final String ARG_EMAIL = "email";
 

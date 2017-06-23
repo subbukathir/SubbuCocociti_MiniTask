@@ -77,6 +77,5 @@
         <item name="android:textStyle">normal</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_margin">@dimen/space_layout_margin_small</item>
-        <item name="android:padding">@dimen/space_layout_padding_small</item>
     </style>
 </resources>

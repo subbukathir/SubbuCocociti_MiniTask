@@ -48,7 +48,8 @@ public class GetLoginProcess extends AsyncTask {
     @Override
     protected Object doInBackground(Object[] objects) {
         try {
-            Call<Response_Login> call = mInterface.getLoginResult(new RequestLogin(new User(strEmail,strPwd)));
+            User user = new User(strEmail,strPwd);
+            Call<Response_Login> call = mInterface.getLoginResult(new RequestLogin(user));
 
             String value = new RequestLogin(new User(strEmail,strPwd)).toString();
             Log.e(TAG," request type " + value);
@@ -57,11 +58,13 @@ public class GetLoginProcess extends AsyncTask {
                 public void onResponse(Call<Response_Login> call, Response<Response_Login> response) {
                     if(response.isSuccessful()){
                         mResponse = response.body();
+                        Log.e(TAG,"isSuccessfull" + mResponse.getInfo());
                         if(mResponse.getStatus().equalsIgnoreCase(ApiConstant.SUCCESS)) mCallback.onLoginDataReceivedSuccess(mResponse);
                         else mCallback.onLoginDataReceivedError(mResponse.getInfo());
 
                     }else {
-                        mCallback.onLoginDataReceivedError(response.errorBody().toString());
+                        Log.e(TAG,"isNotSuccessfull" +response.code() + " message " + response.message());
+                        mCallback.onLoginDataReceivedError(response.message());
                     }
                 }
 
