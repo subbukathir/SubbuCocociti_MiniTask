@@ -1,3 +1,17 @@
 <resources>
+
     <string name="app_name">SubbuCocociti_MiniTask</string>
+    
+    <string name="lbl_enter_email">Enter your e-mail</string>
+    <string name="lbl_enter_password">Enter your password</string>
+
+    <string name="msg_err_email">Enter valid e-mail</string>
+
+    <string name="lbl_login">Login</string>
+
+    <!--labels for list-->
+    <string name="lbl_id">Id</string>
+    <string name="lbl_title">Title </string>
+    <string name="lbl_description">Description </string>
+    <string name="lbl_year">Year </string>
 </resources>

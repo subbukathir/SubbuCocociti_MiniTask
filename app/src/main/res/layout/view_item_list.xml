@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap_style"
+    android:layout_margin="@dimen/space_layout_margin_small"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/match_wrap_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/txtview_lbl_list_item"
+            android:text="@string/lbl_id" />
+
+        <TextView
+            android:id="@+id/tv_item_id"
+            style="@style/txtview_list_item"
+            android:text="@string/lbl_id" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_wrap_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/txtview_lbl_list_item"
+            android:text="@string/lbl_title" />
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            style="@style/txtview_list_item"
+            android:text="@string/lbl_id" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_wrap_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/txtview_lbl_list_item"
+            android:text="@string/lbl_description" />
+
+        <TextView
+            android:id="@+id/tv_item_description"
+            style="@style/txtview_list_item"
+            android:text="@string/lbl_id" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_wrap_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/txtview_lbl_list_item"
+            android:text="@string/lbl_year" />
+
+        <TextView
+            android:id="@+id/tv_item_year"
+            style="@style/txtview_list_item"
+            android:text="@string/lbl_id" />
+    </LinearLayout>
+
+</LinearLayout>

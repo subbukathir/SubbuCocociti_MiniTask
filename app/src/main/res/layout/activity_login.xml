@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_parent_style"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        style="@style/match_parent_style"
+        android:gravity="center"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_email"
+            style="@style/appcompat_edittext"
+            android:inputType="textEmailAddress"
+            android:hint="@string/lbl_enter_email"/>
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_password"
+            style="@style/appcompat_edittext"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:hint="@string/lbl_enter_password"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            style="@style/btn_common_style"
+            android:text="@string/lbl_login"/>
+
+    </LinearLayout>
+
+</LinearLayout>
