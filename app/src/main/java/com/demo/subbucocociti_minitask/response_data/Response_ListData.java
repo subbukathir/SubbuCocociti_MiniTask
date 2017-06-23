@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by vikram on 23/6/17.
+ * Created by subbu on 23/6/17.
  */
 
 public class Response_ListData {
